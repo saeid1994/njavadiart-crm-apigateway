@@ -2,7 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const panel = require('./crm');
+const property = require('./students');
 
-router.use('/panel', panel);
+router.use('/property', property);
+
 module.exports = router;

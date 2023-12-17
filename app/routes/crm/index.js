@@ -2,7 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const panel = require('./crm');
+const v1 = require('./v1');
 
-router.use('/panel', panel);
+router.use('/v1', v1);
+
 module.exports = router;
