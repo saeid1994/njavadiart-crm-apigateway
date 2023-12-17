@@ -1,4 +1,4 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 
 const mysql = require('mysql');
 const cors = require('cors');
@@ -9,13 +9,18 @@ const expressValidator = require('express-validator');
 const bodyParser = require('body-parser');
 const routes = require('./app/routes');
 
+/**
+ * Load environment variables from .env file, where API keys and passwords are configured.
+ */
+dotenv.config({ path: '.env.prod' });
+
 // connect to mySqlCon
 const mySqlCon = mysql.createConnection({
-  host: 'polly.iran.liara.ir',
-  user: 'root',
-  port: '33395',
-  password: 'vEdZyMLXlhFgBwguixMKKa4Y',
-  database: 'akbari-realestate',
+  host: process.env.HOST,
+  user: process.env.USERDB,
+  port: process.env.PORTDB,
+  password: process.env.PASSWORD,
+  database: process.env.DB,
 });
 
 mySqlCon.connect((err) => {
