@@ -4,5 +4,5 @@ const router = express.Router();
 
 const panel = require('./crm');
 
-router.use('/panel', panel);
+router.use('/crm', panel);
 module.exports = router;

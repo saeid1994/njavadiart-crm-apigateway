@@ -1,10 +1,10 @@
 const express = require('express');
 
 const router = express.Router();
-// const HomeController = require('../../../../controllers/panel/property/HomeController');
+const HomeController = require('../../../../controllers/crm/students/HomeController');
 
 // const { check, body } = require('express-validator/check');
 
-// router.get('/types', HomeController.getPropertyTypes);
+router.get('/', HomeController.getStudents);
 
 module.exports = router;

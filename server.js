@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cors = require('cors');
 const express = require('express');
 
@@ -33,13 +33,10 @@ mySqlCon.connect((err) => {
 app.use(
   cors({
     origin: [
-      'https://estateirfront.iran.liara.run',
-      'https://estateirfront.iran.liara.run/',
       'http://localhost:3000',
       'http://127.0.0.1:3000',
       'http://localhost:3000/',
       'http://127.0.0.1:3000/',
-      'http://192.168.0.102:3000/',
     ],
     credentials: true,
     optionsSuccessStatus: 200,
