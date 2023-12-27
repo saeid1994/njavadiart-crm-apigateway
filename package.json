@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js "
+    "dev": "node --watch server.js "
   },
   "devDependencies": {
     "chai": "^4.3.10",
@@ -41,7 +41,6 @@
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.5",
-    "nodemon": "^2.0.12",
     "save-dev": "^0.0.1-security"
   }
 }

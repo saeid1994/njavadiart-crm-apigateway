@@ -1,4 +1,4 @@
-const Home = require('../../../models/crm/students/v1/Home');
+const Home = require('../../../../models/crm/students/v1/Home');
 
 exports.getStudents = async (req, res, next) => {
   try {
