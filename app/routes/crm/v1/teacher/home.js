@@ -5,6 +5,8 @@ const HomeController = require('../../../../controllers/crm/teacher/v1/HomeContr
 
 // const { check, body } = require('express-validator/check');
 
-router.get('/', HomeController.getStudents);
+router.get('/course', HomeController.getCourses);
+
+router.get('/class/:courseId', HomeController.getClassByCourseId);
 
 module.exports = router;

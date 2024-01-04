@@ -12,16 +12,8 @@ const mySqlCon = mysql.createConnection({
   database: process.env.DB,
 });
 
-// const mySqlCon = mysql.createConnection({
-//   host: 'damavand.liara.cloud',
-//   user: 'root',
-//   port: 30111,
-//   password: 'u9DW7y7t2sJR4lZiLNQekXbh',
-//   database: 'crm',
-// });
-
-const GetStudents = async function () {
-  const query = `call GET_STUDENTS_v1()`;
+const getCourses = async function () {
+  const query = `call GET_COURSES_V1()`;
   return new Promise((resolve, reject) => {
     mySqlCon.query(query, (err, results) => {
       if (err) return reject(err);
@@ -32,6 +24,19 @@ const GetStudents = async function () {
   });
 };
 
+const getClassByCourseId = async function (params) {
+  const query = `call GET_CLASSES_BY_ID_V1(?)`;
+  return new Promise((resolve, reject) => {
+    mySqlCon.query(query, [params.courseId], (err, results) => {
+      if (err) return reject(err);
+      let res = JSON.stringify(results[0]);
+      res = JSON.parse(res);
+      return resolve(res);
+    });
+  });
+};
+
 module.exports = {
-  GetStudents,
+  getCourses,
+  getClassByCourseId,
 };
